@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<PublishAot>false</PublishAot>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<EnableComHosting>true</EnableComHosting>
+		<ApplicationIcon>coderPro.ico</ApplicationIcon>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<SignAssembly>False</SignAssembly>
+		<Title>Secure Recycle</Title>
+		<Authors>Brandon Osborne</Authors>
+		<Company>coderPro.net</Company>
+		<Product>Secure Recycle</Product>
+		<Description>A console application for securely deleting files from your Windows recycle bin.</Description>
+		<Copyright>Copyright 2025 coderPro.net. All rights reserved.</Copyright>
+		<PackageProjectUrl>https://coderpro.net</PackageProjectUrl>
+		<PackageIcon>coderPro_blue_250w.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/coderpros/CoderPro.Apps.SecureRecycle.Console</RepositoryUrl>
+		<PackageTags>dotnet;csharp;consoleapp;</PackageTags>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+		<AnalysisLevel>latest-recommended</AnalysisLevel>
+		<AssemblyName>SecureRecyle</AssemblyName>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Include="coderPro.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\CoderPro.Simplify.UI\Resources\coderPro_blue_250w.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="Interop.Shell32">
+			<HintPath>..\CoderPro.Simplify.UI\obj\Debug\net8.0-windows8.0\Interop.Shell32.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CoderPro.SecureRecycle.UI": {
+      "commandName": "Project",
+      "commandLineArgs": "/debug /protocol dod7",
+      "nativeDebugging": true,
+      "sqlDebugging": false
+    }
+  }
+}
