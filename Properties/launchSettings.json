@@ -1,8 +1,12 @@
 {
   "profiles": {
-    "CoderPro.SecureRecycle.UI": {
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    },
+    "CoderPro.Apps.SecureRecycle.Console": {
       "commandName": "Project",
-      "commandLineArgs": "/debug /protocol dod7",
+      "commandLineArgs": "/protocol dod7",
       "nativeDebugging": true,
       "sqlDebugging": false
     }

@@ -14,6 +14,8 @@
 This is a simple .Net 8 (C#) console application that securely deletes files and folders from your computer. 
 This application uses the SecureDelete library to overwrite the files and folders multiple times before deleting them. 
 
+The application will randomly encrypt the files with AES 256 before finally deleting them completely with one of the following protocols. (Optional)
+
 The following protocols are available for deleting files:
 - Gutmann
 - DoD 7-pass
@@ -21,28 +23,28 @@ The following protocols are available for deleting files:
 - Overwrite Ones
 - Overwrite Random (Shred)
 
-The application will randomly encrypt the files with AES 256 before deleting them following one of the above protocols.
-
-
 ## How to use
 
 Simply execute the following command:
 ```console
-SecureDelete.exe [/debug] [/protocol gutmann|dod7|zeros|ones|random]]
+SecureDelete.exe [/debug] [encrypt] [/protocol dod7|gutmann|none|ones|random|zeros]]
 ```
 - /debug: This is an optional parameter that will display additional information about the files being deleted.
+- /encrypt: This is an optional parameter that will encrypt the files before deleting them.
 - /protocol: This is an optional parameter that specifies the protocol to use when deleting the files. The default is "random".
     - dod7: DoD 7-pass protocol (5220.22-M): Overwrites the file 7 times with different patterns.
     - gutmann: Gutmann protocol: Overwrites the file 35 times with different patterns.
-    - zeros: Overwrites the file with zeros.
+    - none: No protocol: Deletes the file without overwriting it.
     - ones: Overwrites the file with ones.
     - random: Overwrites the file with random data.
-
-I've included a test client application in this project, but here is is an elaboration on how to use each of the methods.
-
-This is available as a NuGet package here: [Nuget.org](https://www.nuget.org/packages/KickBox.Core/)
+    - zeros: Overwrites the file with zeros.
 
 ## Change Log
+- 2025/01/10
+    - Added the ability to specify not to encrypt the file before deleting it.
+    - Added the none option to the protocol parameter to delete the file without overwriting it.
+    - Added a progress bar to the console output. 
+    - Fixed the memory leak when deleting a lot of files (especially large files).
 - 2025/01/03
   - Initial commit
 
